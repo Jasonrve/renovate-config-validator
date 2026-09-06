@@ -1,12 +1,41 @@
 # AegisScan test fixture
 
 This file exists solely to verify AegisScan's TruffleHog integration end-to-end.
-It intentionally contains AWS's own publicly documented example access key
-(the placeholder used throughout AWS's official docs, e.g.
-https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) —
-not a real, functional credential. Safe to keep or delete at any time.
+
+The RSA key below was freshly generated with `openssl genrsa` specifically for this
+test — it was never used anywhere else, isn't tied to any real system, and is safe
+to keep or delete at any time. (AWS's well-known documentation example credential,
+`AKIAIOSFODNN7EXAMPLE`, was tried first but TruffleHog's own detector explicitly
+ignores it as a known placeholder, so it produced no finding — a real, if unused,
+key is what actually exercises the detector.)
 
 ```
-AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
-AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+-----BEGIN PRIVATE KEY-----
+MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQChBxPGioztaVMo
+cZ7ZMMpP6KO4U1JdrSdO7W7P/7FTibyKZhITdfSqa8ZbTwH7SeIy2HWQRqplXH3o
+oeWnIFIEt//yrn+G5tH6LH0CuGNt2MsnHMCcFCZ9ZRoirEz1+U8rOD4mv9LWvB/K
+2HhIg9ZN972WfGEDg6xdjHB32efAGkLGRVRmUxem6OfGIMnyHNriVtjmgf+a5JCq
+/cb5fn9oQ5nPhAzzoWOq1RCgHzddPcOKAXH5SGek3iWExgM8DTbp/chTFEepx1PJ
+ly1HIlAD3Qr3izgdI4IXp77Y5th4gUGBZfdsbtE5UShEBNmywGiO2S2a5KtK8A7O
+SgmMiQudAgMBAAECggEAHTJODt3guwwxkH/3bAxpZk85Xiq3YLZMTgaFZM/I7Gtp
+JNPoe6BTxhGoA7bB1nj5OzxdppT1gM7iImu2WtTkoiflj7A9fa18zYZC/VsG5iwc
+e6E+OB58MxjBgh9pDeFQDjdSp4540UgHYK1as9U5pmXguXggU/WMK2MTIlv/Zehj
+LvDO0JqAmd7SB5HKNSZrPPK6no9fGTrg33v6YxvprlbXG4ovSL+q5BXQwPIrLhZm
+L74GhV5x9Cp9wtS7IYcG1aG50ifMf+CNT5W89SQA1pbwTU5tjYejeAk1Ha26jAEo
+H8xHmKu0na6HKDzQNrqWITePUfgsrSRe2rO1b9/9WQKBgQDbxBeZnWQ5ck6kQ2I+
+yBCDP6ub4Fd4aw+KxAOIfh4So2WbFtGqR5kaht58oGjlbvYis61jzOZSfaAjuQ2r
+qdSSNnRl3DF4ZEpvz1fw9IEHxoTRBs3OyU1oEN62LeBZOqCN9HWLLA9vQynHZzDc
+MQKZh4CgtY78QogeEPNoNwLQaQKBgQC7k8AhcXPwmezIvXtplYcV2UtDt85WrcA9
+5yyz1xDuwlMU3aCe9r9XNWNBC0nNEH6+BUtyxOoJ7/TfZkU1DsoqBv2kPYMdLlD8
+TC1adFYP9bHUWFxcB8xzNtckTOzdpErxJ/cb7oVj/TTR3tZygq1xnm3BDCViexPT
+9Jo0cF/7FQKBgDUfh5zogOuqB/yJFVybu/IeF/uMFVjUeGNQ0pHR+q8CtHLy5yfE
+OuxAodN6ayDa28CzsjwnsZ1LJMS93OIcIXhelXBx87toct3oPxfN4srgYAavIFzW
+KFH5kfxzxoGLPHhUGX3U3r5Ee/rppNP1PO2j5aHzgWbVJlYuPsh4U8PRAoGAXBQU
+bZZOzp4Q0R3KtjLTpBMN0kkpPf1+8CRKGmIJitrTg9ujnEUN+lZXybcr3EErpkXd
+GpK1PHmRYBTJBlmjPew+mGAlu65fzOnsHYocMStvxwg1FmwxnaEfDU/Buq+KpkTz
+FcAJtOK4Cgn0hTPGxo553BkFRQmb2yEojXNYel0CgYBL82h6cGtdWICvNaT2dJjA
+pKVGIrMR8wV5OxtbZY2hFB2GPqEoQQoBqwryAuttYXNJg8ZdldsieL8+JNF5wkL8
+fAy5TxonphgpH0hV/yastGMhlvtdArhZ5hIuQATszQd1M71Mxpe4QdNRCSVqHQmL
+ztGh/JqiyZcgimnyQXLuyQ==
+-----END PRIVATE KEY-----
 ```
